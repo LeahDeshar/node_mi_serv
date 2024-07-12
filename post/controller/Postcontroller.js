@@ -18,6 +18,7 @@ class PostController{
  
          const post = await prisma.post.create({
              data:{
+                user_id: authUser.id,
                  title,
                  content,
              }
