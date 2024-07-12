@@ -3,6 +3,7 @@
 import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
+import Routes from "./routes/index.js";
 
 // setup express app
 const app = express()
@@ -15,7 +16,7 @@ app.get("/", (req,res) => {
     return res.json({message: "Welcome to the post service"})
 }
 )
-
+app.use(Routes);
 
 // server listen
 app.listen(PORT, (req,res) => {

@@ -1,3 +1,6 @@
+import prisma from "../config/db.config.js";
+// import axios from "axios";
+
 class PostController{
     static async index(req,res){
         try {
@@ -8,7 +11,7 @@ class PostController{
         }
     }
 
-    static async store(res,res){
+    static async store(req,res){
        try {
          const authUser = req.user;
          const {title, content} = req.body;
@@ -27,3 +30,5 @@ class PostController{
 
     }
 }
+
+export default PostController;
